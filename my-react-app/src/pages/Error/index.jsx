@@ -20,6 +20,7 @@ const ParaStyled = styled.p`
 const LinkStyled = styled(Link)`
   font-size: 18px;
   text-decoration: underline;
+  margin-bottom: 125px;
 `
 
 function Error() {

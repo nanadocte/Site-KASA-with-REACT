@@ -1,6 +1,7 @@
 import Banniere from '../../components/Banniere'
 import paysage1 from '../../assets/paysage1.png'
 import styled from 'styled-components'
+import Card from '../../components/Card'
 
 const WrapStyled = styled.div`
   box-shadow: 0px 4px 4px 0px #00000040;
@@ -9,22 +10,21 @@ const WrapStyled = styled.div`
   border-radius: 25px;
   overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   p {
     z-index: 1;
     position: absolute;
-    bottom: 28px;
-    left: 230px;
     font-size: 48px;
-    font-weight: bold;
+    color: #ffffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
   }
   &::after {
     content: '';
     position: absolute;
+    z-index: 0;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
@@ -32,11 +32,16 @@ const WrapStyled = styled.div`
 
 function Home() {
   return (
-    <WrapStyled>
-      <Banniere image={paysage1} />
+    <div>
+      <WrapStyled>
+        <Banniere image={paysage1} />
 
-      <p>Chez vous partout et ailleurs </p>
-    </WrapStyled>
+        <p>Chez vous partout et ailleurs </p>
+      </WrapStyled>
+      <div>
+        <Card />
+      </div>
+    </div>
   )
 }
 

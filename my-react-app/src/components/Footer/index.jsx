@@ -15,6 +15,7 @@ const ImgStyled = styled.img`
 `
 const PStyled = styled.p`
   font-size: 24px;
+  color: #ffffffff;
 `
 
 function Footer() {

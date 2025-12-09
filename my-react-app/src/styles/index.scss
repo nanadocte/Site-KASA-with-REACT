@@ -1,4 +1,5 @@
 $main-color: #ff6060;
+$background-color: #f6f6f6;
 
 :root {
   font-family: 'Montserrat', sans-serif;
@@ -32,6 +33,9 @@ body {
 main {
   flex-grow: 1;
   margin: 0 90px 50px 90px;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
 }
 
 .main {
@@ -70,7 +74,7 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   border-radius: 25px;
-  background-color: #f6f6f6;
+  background-color: $background-color;
   justify-content: center;
   gap: 50px;
   padding: 50px;
@@ -101,6 +105,7 @@ button:focus-visible {
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    object-fit: cover;
   }
   &__titre {
     position: relative;
@@ -110,6 +115,40 @@ button:focus-visible {
     font-size: 18px;
     color: #ffffff;
     z-index: 1;
+  }
+}
+
+// Collapse !
+.collapse {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
+  &__topbar {
+    background-color: $main-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px 20px 15px 15px;
+  }
+  &__title {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__contenu {
+    background-color: $background-color;
+    border-radius: 5px;
+    padding: 15px;
+    p {
+      margin: 0;
+      font-weight: 400;
+      font-size: 19px;
+    }
   }
 }
 

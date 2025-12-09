@@ -20,6 +20,8 @@ const WrapStyled = styled.div`
     transform: translate(-50%, -50%);
     margin: 0;
     white-space: nowrap;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   &::after {
     content: '';

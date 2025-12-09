@@ -2,11 +2,15 @@ import annonces from '../../datas/annonces.json'
 
 function Card() {
   return (
-    <div>
+    <div className="cards">
       {annonces.map((annonce) => (
-        <article key={annonce.id}>
-          <img src={annonce.picture} alt="Photo super"></img>
-          <h2>{annonce.title}</h2>
+        <article className="cards__item" key={annonce.id}>
+          <img
+            className="cards__image"
+            src={annonce.cover}
+            alt={annonce.description}
+          ></img>
+          <h2 className="cards__titre">{annonce.title}</h2>
         </article>
       ))}
     </div>

@@ -32,7 +32,7 @@ const WrapStyled = styled.div`
 
 function Home() {
   return (
-    <div>
+    <div className="main">
       <WrapStyled>
         <Banniere image={paysage1} />
 

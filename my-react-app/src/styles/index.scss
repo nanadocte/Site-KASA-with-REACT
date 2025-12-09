@@ -31,7 +31,13 @@ body {
 
 main {
   flex-grow: 1;
-  margin: 0 90px 0 90px;
+  margin: 0 90px 50px 90px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 h1 {
@@ -56,6 +62,55 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+// Cards and card
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 25px;
+  background-color: #f6f6f6;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px;
+
+  &__item {
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(10, 10, 10, 0) 42%,
+        rgba(4, 4, 4, 0.205) 99.99%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+  &__titre {
+    position: relative;
+    bottom: 25%;
+    left: 5%;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+    z-index: 1;
+  }
 }
 
 @media (prefers-color-scheme: light) {

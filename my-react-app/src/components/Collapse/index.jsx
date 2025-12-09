@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-
 const ArrowStyled = styled.img`
   height: 13.71px;
   width: 24px;
@@ -22,7 +20,11 @@ function Collapse({ valeur, contenu, arrow }) {
       </div>
       {open && (
         <div className="collapse__contenu">
-          <p>{contenu}</p>
+          {Array.isArray(contenu) ? (
+            contenu.map((item, index) => <p key={index}>{item}</p>)
+          ) : (
+            <p>{contenu}</p>
+          )}
         </div>
       )}
     </div>

@@ -37,7 +37,6 @@ function Home() {
     <div className="main">
       <WrapStyled>
         <Banniere image={paysage1} />
-
         <p>Chez vous partout et ailleurs </p>
       </WrapStyled>
       <div>

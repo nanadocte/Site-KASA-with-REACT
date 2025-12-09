@@ -5,7 +5,7 @@ function Card() {
   return (
     <div className="cards">
       {annonces.map((annonce) => (
-        <Link to="/logement" key={annonce.id}>
+        <Link to={`/logement/${annonce.id}`} key={annonce.id}>
           <article className="cards__item">
             <img
               className="cards__image"

@@ -11,6 +11,8 @@ function Logement() {
   const [index, setIndex] = useState(0)
   const annonceId = annonces.find((annonce) => annonce.id === id)
   const nbPicture = annonceId.pictures.length - 1
+  const nbStar = [...Array(Number(annonceId.rating))]
+  const nbStarLeft = [...Array(Number(5 - annonceId.rating))]
   const nextImage = () => {
     index < nbPicture ? setIndex(index + 1) : setIndex(0)
   }
@@ -51,7 +53,24 @@ function Logement() {
               src={annonceId.host.picture}
             ></img>
           </div>
-          <div className="logement__rating">{annonceId.rating}</div>
+          <div className="logement__rating">
+            {nbStar.map((value, index) => (
+              <i
+                key={index}
+                className="fa fa-star"
+                aria-hidden="true"
+                alt="star rating"
+              ></i>
+            ))}
+            {nbStarLeft.map((value, index) => (
+              <i
+                key={index}
+                className="fa fa-star fa-star--grey"
+                aria-hidden="true"
+                alt="star rating"
+              ></i>
+            ))}
+          </div>
         </div>
       </div>
       <div className="logement__details">

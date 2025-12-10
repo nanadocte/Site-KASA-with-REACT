@@ -5,6 +5,7 @@ import Collapse from '../../components/Collapse'
 import arrowclose from '../../assets/arrowclose.png'
 
 // attention index en key
+//https://fr.legacy.reactjs.org/docs/lists-and-keys.html
 
 const DivStyled = styled.div`
   position: relative;

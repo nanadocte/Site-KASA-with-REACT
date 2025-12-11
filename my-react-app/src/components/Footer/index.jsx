@@ -9,6 +9,9 @@ const DivStyled = styled.div`
   justify-content: center;
   height: 209px;
   gap: 15px;
+  @media (max-width: 768px) {
+    gap: 0;
+  }
 `
 const ImgStyled = styled.img`
   margin-top: 50px;
@@ -16,6 +19,9 @@ const ImgStyled = styled.img`
 const PStyled = styled.p`
   font-size: 24px;
   color: #ffffffff;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 function Footer() {

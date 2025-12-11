@@ -32,7 +32,7 @@ body {
 
 main {
   flex-grow: 1;
-  margin: 0 90px 50px 90px;
+  margin: 0 5% 5% 5%;
   display: flex;
   gap: 50px;
   flex-direction: column;
@@ -50,25 +50,6 @@ img {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 // Cards and card
@@ -96,6 +77,9 @@ button:focus-visible {
     position: relative;
     flex-grow: 1;
     flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     &::after {
       content: '';
@@ -122,9 +106,9 @@ button:focus-visible {
     object-fit: cover;
   }
   &__titre {
-    position: relative;
-    bottom: 25%;
-    left: 5%;
+    position: absolute;
+    margin: 15px 15px 20px 15px;
+
     font-weight: 700;
     font-size: 18px;
     color: #ffffff;
@@ -206,7 +190,8 @@ button:focus-visible {
     color: $main-color;
     font-size: 36px;
     font-weight: 500;
-    margin-bottom: 0;
+    margin: 0;
+    line-height: 1;
   }
   &__location {
     font-size: 18px;
@@ -274,5 +259,62 @@ button:focus-visible {
   }
 }
 
+.logo--mobile {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
+}
+
+@media (max-width: 768px) {
+  main {
+    gap: 30px;
+  }
+  .logo--mobile {
+    display: block; /* réduit automatiquement sur mobile */
+  }
+  .logo {
+    display: none;
+  }
+
+  .collapse__title {
+    font-size: 13px;
+  }
+  .collapse__topbar {
+    padding: 2%;
+  }
+
+  .logement__details {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logement__info {
+    flex-direction: column;
+  }
+
+  .logement__host-rating {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img.logement__host-img {
+    width: 34px;
+  }
+
+  .logement__host {
+    align-items: center;
+  }
+
+  .logement__rating i.fa.fa-star {
+    font-size: 18px;
+  }
+
+  .header__liens {
+    gap: 26px;
+  }
+  .header__title {
+    font-size: 12px;
+  }
 }

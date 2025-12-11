@@ -12,12 +12,19 @@ const DivStyled = styled.div`
   height: 223px;
   border-radius: 25px;
   overflow: hidden;
-
+  
+  @media (max-width: 768px) {
+    height: 111px;
+}
   &::after {
     content: '';
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+    height: 111px;
+    border-radius: 25px;
   }
 `
 

@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import Card from '../../components/Card'
 
 const WrapStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 4px 4px 0px #00000040;
   position: relative;
   height: 223px;
@@ -15,13 +18,9 @@ const WrapStyled = styled.div`
     position: absolute;
     font-size: 48px;
     color: #ffffffff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    white-space: nowrap;
-
+    margin: 25px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 1;
   }
   &::after {
     content: '';

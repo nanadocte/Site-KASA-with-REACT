@@ -13,6 +13,10 @@ const WrapStyled = styled.div`
   border-radius: 25px;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    height: 111px;
+  }
+
   p {
     z-index: 1;
     position: absolute;
@@ -21,6 +25,9 @@ const WrapStyled = styled.div`
     margin: 25px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     line-height: 1;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
   }
   &::after {
     content: '';

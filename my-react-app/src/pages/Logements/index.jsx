@@ -2,36 +2,19 @@ import { useParams } from 'react-router-dom'
 import annonces from '../../datas/annonces.json'
 import Collapse from '../../components/Collapse'
 import arrowclose from '../../assets/arrowclose.png'
-import { useState } from 'react'
-import arrownext from '../../assets/arrownext.png'
-import arrowprev from '../../assets/arrowprev.png'
+import Slideshow from '../../components/Slideshow'
 
 function Logement() {
   const { id } = useParams()
-  const [index, setIndex] = useState(0)
   const annonceId = annonces.find((annonce) => annonce.id === id)
   const nbPicture = annonceId.pictures.length - 1
   const nbStar = [...Array(Number(annonceId.rating))]
   const nbStarLeft = [...Array(Number(5 - annonceId.rating))]
-  const nextImage = () => {
-    index < nbPicture ? setIndex(index + 1) : setIndex(0)
-  }
-  const prevImage = () => {
-    index > 0 ? setIndex(index - 1) : setIndex(nbPicture)
-  }
+
   return (
     <div className="logement">
-      <div className="logement__gallery">
-        <img
-          className="logement__image"
-          src={annonceId.pictures[index]}
-          alt={`${annonceId.title} image ${index + 1}`}
-        ></img>
-        <div className="logement__navigation">
-          <img src={arrowprev} alt="previous image" onClick={prevImage}></img>
-          <img src={arrownext} alt="next image" onClick={nextImage}></img>
-        </div>
-      </div>
+      <Slideshow nbPicture={nbPicture} annonceId={annonceId} />
+
       <div className="logement__info">
         <div className="logement__text">
           <h2 className="logement__title">{annonceId.title}</h2>
@@ -39,7 +22,7 @@ function Logement() {
           <ul className="logement__tags">
             {' '}
             {annonceId.tags.map((tag, index) => (
-              <li className="logement__tag" key={index}>
+              <li className="logement__tag" key={`${id} ${index}`}>
                 {tag}
               </li>
             ))}

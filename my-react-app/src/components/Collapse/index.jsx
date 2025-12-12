@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import arrowclose from '../../assets/arrowclose.png'
+import arrowopen from '../../assets/arrowopen.png'
 const ArrowStyled = styled.img`
   height: 13.71px;
   width: 24px;
 `
 
-function Collapse({ valeur, contenu, arrow }) {
+function Collapse({ valeur, contenu }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -14,7 +16,7 @@ function Collapse({ valeur, contenu, arrow }) {
         <h3 className="collapse__title">{valeur}</h3>
         <ArrowStyled
           className="collapse_arrow"
-          src={arrow}
+          src={open ? arrowclose : arrowopen}
           alt="toggle"
         ></ArrowStyled>
       </div>

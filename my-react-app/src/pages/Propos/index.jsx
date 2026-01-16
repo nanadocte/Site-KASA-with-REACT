@@ -15,6 +15,8 @@ const DivStyled = styled.div`
   
   @media (max-width: 768px) {
     height: 111px;
+        border-radius: 10px;
+
 }
   &::after {
     content: '';
@@ -24,7 +26,7 @@ const DivStyled = styled.div`
 
     @media (max-width: 768px) {
     height: 111px;
-    border-radius: 25px;
+    border-radius: 10px;
   }
 `
 
@@ -39,7 +41,7 @@ const valeur = ['Fiabilité', 'Respect', 'Service', 'Sécurité']
 
 function Propos() {
   return (
-    <>
+    <div className="main">
       <DivStyled>
         <Banniere image={paysage2} />
       </DivStyled>
@@ -55,29 +57,7 @@ function Propos() {
           )
         })}
       </div>
-      {/* <div className="collapse">
-        <Collapse
-          valeur="Fiabilité"
-          contenu="Les annonces postées sur Kasa garantissent une fiabilité total. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes. "
-          arrow={arrowclose}
-        />
-        <Collapse
-          valeur="Respect"
-          contenu="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
-          arrow={arrowclose}
-        />
-        <Collapse
-          valeur="Service"
-          contenu="La qualité du service est au coeur de notre engagement chez Kasa. Nous veillons à ce que chaque interaction, que ce soit avec nos hôtes ou nos locataires, soit empreinte de respect et de bienveillance."
-          arrow={arrowclose}
-        />
-        <Collapse
-          valeur="Sécurité"
-          contenu="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux criètes de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés.  Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
-          arrow={arrowclose}
-        />
-      </div> */}
-    </>
+    </div>
   )
 }
 export default Propos

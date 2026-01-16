@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import annonces from '../../datas/annonces.json'
 import Collapse from '../../components/Collapse'
 import arrowclose from '../../assets/arrowclose.png'
@@ -7,6 +7,9 @@ import Slideshow from '../../components/Slideshow'
 function Logement() {
   const { id } = useParams()
   const annonceId = annonces.find((annonce) => annonce.id === id)
+  if (!annonceId) {
+    return <Navigate to="/error" replace />
+  }
   const nbPicture = annonceId.pictures.length - 1
   const nbStar = [...Array(Number(annonceId.rating))]
   const nbStarLeft = [...Array(Number(5 - annonceId.rating))]
@@ -14,7 +17,6 @@ function Logement() {
   return (
     <div className="logement">
       <Slideshow nbPicture={nbPicture} annonceId={annonceId} />
-
       <div className="logement__info">
         <div className="logement__text">
           <h2 className="logement__title">{annonceId.title}</h2>

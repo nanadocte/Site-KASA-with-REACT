@@ -7,20 +7,34 @@ const ContainError = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 139px;
+  @media (max-width: 768px) {
+    font-size: 113px;
+  }
 `
 
 const TitreStyled = styled.h1`
   font-size: 288px;
-  margin: 0;
+  margin: 100px 0 0 0;
+  @media (max-width: 768px) {
+    font-size: 96px;
+  }
 `
 const ParaStyled = styled.p`
   font-size: 36px;
   margin: 0;
+  text-align: center;
+  line-height: 1.4;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 const LinkStyled = styled(Link)`
   font-size: 18px;
   text-decoration: underline;
   margin-bottom: 125px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `
 
 function Error() {

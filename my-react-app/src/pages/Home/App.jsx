@@ -15,6 +15,7 @@ const WrapStyled = styled.div`
 
   @media (max-width: 768px) {
     height: 111px;
+    border-radius: 10px;
   }
 
   p {
@@ -35,6 +36,7 @@ const WrapStyled = styled.div`
     z-index: 0;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
   }
 `
 

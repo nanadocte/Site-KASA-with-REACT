@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import logomobile from '../../assets/logomobile.png'
 import styled from 'styled-components'
@@ -12,11 +12,15 @@ const NavStyled = styled.nav`
   }
 `
 
-const LinkStyled = styled(Link)`
+const LinkStyled = styled(NavLink)`
   color: #000000;
   font-size: 24px;
+  &.active {
+    text-decoration: underline;
+  }
   @media (max-width: 768px) {
     font-size: 12px;
+    text-transform: uppercase;
   }
 `
 

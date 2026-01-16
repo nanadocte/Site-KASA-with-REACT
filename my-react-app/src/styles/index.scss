@@ -32,18 +32,13 @@ body {
 }
 
 main {
-  flex-grow: 1;
   margin: 0 5% 5% 5%;
-  display: flex;
-  gap: 50px;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 2em;
 }
 img {
   object-fit: cover;
@@ -148,15 +143,25 @@ h1 {
   &__contenu {
     background-color: $background-color;
     border-radius: 5px;
-    padding: 15px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition:
+      max-height 0.45s ease,
+      padding 0.45s ease;
+
     p {
       margin: 0;
       font-weight: 400;
-      font-size: 19px;
+      font-size: 1em;
     }
   }
 }
 
+.collapse__contenu.open {
+  max-height: 600px;
+  padding: 15px;
+}
 // logement
 
 .logement {
@@ -269,18 +274,21 @@ h1 {
   display: none;
 }
 
+.cards a {
+  max-width: 335px;
+}
 @media (prefers-color-scheme: light) {
 }
 
+@media (max-width: 1338px) {
+  .cards a {
+    max-width: none;
+  }
+}
+
 @media (max-width: 768px) {
-  main {
-    gap: 30px;
-  }
-  .main {
-    gap: 0;
-  }
   .logo--mobile {
-    display: block; /* réduit automatiquement sur mobile */
+    display: block;
   }
   .logo {
     display: none;
@@ -288,11 +296,17 @@ h1 {
 
   .cards {
     background-color: white;
-    padding: 50px 0;
+    padding: 0;
+  }
+  .cards a {
+    max-height: 225px;
   }
 
   .collapse__title {
     font-size: 13px;
+  }
+  .collapse__contenu {
+    font-size: 0.75em;
   }
   .collapse__topbar {
     padding: 2%;
@@ -311,6 +325,7 @@ h1 {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
   }
 
   img.logement__host-img {
@@ -319,6 +334,11 @@ h1 {
 
   .logement__host {
     align-items: center;
+    text-align: end;
+    gap: 10px;
+    &-name {
+      font-size: 12px;
+    }
   }
 
   .logement__rating i.fa.fa-star {
@@ -334,5 +354,9 @@ h1 {
   }
   .header__title {
     font-size: 12px;
+  }
+
+  .logement .gallery {
+    height: 255px;
   }
 }

@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import arrownext from '../../assets/arrownext.png'
 import arrowprev from '../../assets/arrowprev.png'
+import styled from 'styled-components'
+
+const ArrowStyles = styled.img`
+  cursor: pointer;
+`
 
 function Slideshow({ nbPicture, annonceId }) {
   const [index, setIndex] = useState(0)
@@ -24,8 +29,16 @@ function Slideshow({ nbPicture, annonceId }) {
       ></img>{' '}
       {annonceId.pictures.length > 1 && (
         <div className="gallery__navigation">
-          <img src={arrowprev} alt="previous image" onClick={prevImage}></img>
-          <img src={arrownext} alt="next image" onClick={nextImage}></img>
+          <ArrowStyles
+            src={arrowprev}
+            alt="previous image"
+            onClick={prevImage}
+          ></ArrowStyles>
+          <ArrowStyles
+            src={arrownext}
+            alt="next image"
+            onClick={nextImage}
+          ></ArrowStyles>
         </div>
       )}
     </div>

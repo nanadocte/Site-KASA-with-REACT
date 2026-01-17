@@ -3,6 +3,7 @@ import annonces from '../../datas/annonces.json'
 import Collapse from '../../components/Collapse'
 import arrowclose from '../../assets/arrowclose.png'
 import Slideshow from '../../components/Slideshow'
+import Rating from '../../components/Rating'
 
 function Logement() {
   const { id } = useParams()
@@ -38,24 +39,11 @@ function Logement() {
               src={annonceId.host.picture}
             ></img>
           </div>
-          <div className="logement__rating">
-            {nbStar.map((value, index) => (
-              <i
-                key={index}
-                className="fa fa-star"
-                aria-hidden="true"
-                alt="star rating"
-              ></i>
-            ))}
-            {nbStarLeft.map((value, index) => (
-              <i
-                key={index}
-                className="fa fa-star fa-star--grey"
-                aria-hidden="true"
-                alt="star rating"
-              ></i>
-            ))}
-          </div>
+          <Rating
+            rating="logement__rating"
+            nbStar={nbStar}
+            nbStarLeft={nbStarLeft}
+          />
         </div>
       </div>
       <div className="logement__details">

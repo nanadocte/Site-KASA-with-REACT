@@ -4,9 +4,6 @@ import styled from 'styled-components'
 import Collapse from '../../components/Collapse'
 import arrowclose from '../../assets/arrowclose.png'
 
-// attention index en key
-//https://fr.legacy.reactjs.org/docs/lists-and-keys.html
-
 const DivStyled = styled.div`
   position: relative;
   height: 223px;
@@ -15,7 +12,7 @@ const DivStyled = styled.div`
   
   @media (max-width: 768px) {
     height: 111px;
-        border-radius: 10px;
+    border-radius: 10px;
 
 }
   &::after {

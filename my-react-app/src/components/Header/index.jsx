@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const NavStyled = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin: 5% 5%;
+  margin: 3em 3em;
   @media (max-width: 768px) {
     gap: 15px;
   }

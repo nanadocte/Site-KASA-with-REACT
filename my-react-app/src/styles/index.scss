@@ -32,13 +32,13 @@ body {
 }
 
 main {
-  margin: 0 5% 5% 5%;
+  margin: 0 5% 3em 5%;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3em;
 }
 img {
   object-fit: cover;
@@ -58,6 +58,8 @@ h1 {
   justify-content: center;
   gap: 50px;
   padding: 50px;
+  height: 725px;
+  overflow: scroll;
 
   a {
     display: flex;
@@ -287,6 +289,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  #root {
+    max-height: 1267px;
+  }
+
   .logo--mobile {
     display: block;
   }
